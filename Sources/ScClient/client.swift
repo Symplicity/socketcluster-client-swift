@@ -1,6 +1,6 @@
 import Starscream
 import Foundation
-
+import HandyJSON
 
 public class ScClient : Listener, WebSocketDelegate {
     
@@ -128,7 +128,17 @@ public class ScClient : Listener, WebSocketDelegate {
             self.socket.write(string: ackObject.toJSONString()!)
         }
     }
-    
+	
+    public func login (data : AnyObject?) {
+        let emitObject = Model.getEmitEventObject(eventName: "login", data: data, messageId: counter.incrementAndGet())
+        self.socket.write(string : emitObject.toJSONString()!)
+    }
+
+    public func subscribe(channel: String, data: HandyJSON) {
+        let subscribeObject = EmitEvent(event: "#subscribe", data: Channel(channel: channel, data: data as AnyObject), cid: counter.incrementAndGet())
+        self.socket.write(string : subscribeObject.toJSONString()!)
+    }
+
     public func emit (eventName : String, data : AnyObject?) {
         let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: counter.incrementAndGet())
         self.socket.write(string : emitObject.toJSONString()!)
