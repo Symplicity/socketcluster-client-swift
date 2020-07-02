@@ -129,8 +129,8 @@ public class ScClient : Listener, WebSocketDelegate {
         }
     }
 	
-    public func login (data : AnyObject?) {
-        let emitObject = Model.getEmitEventObject(eventName: "login", data: data, messageId: counter.incrementAndGet())
+    public func invoke(eventName: String, data : AnyObject?) {
+        let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: counter.incrementAndGet())
         self.socket.write(string : emitObject.toJSONString()!)
     }
 
@@ -138,7 +138,7 @@ public class ScClient : Listener, WebSocketDelegate {
         let subscribeObject = EmitEvent(event: "#subscribe", data: Channel(channel: channel, data: data as AnyObject), cid: counter.incrementAndGet())
         self.socket.write(string : subscribeObject.toJSONString()!)
     }
-
+    
     public func emit (eventName : String, data : AnyObject?) {
         let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: counter.incrementAndGet())
         self.socket.write(string : emitObject.toJSONString()!)
