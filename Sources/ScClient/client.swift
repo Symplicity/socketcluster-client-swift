@@ -131,12 +131,12 @@ public class ScClient : Listener, WebSocketDelegate {
 	
     public func invoke(eventName: String, data : AnyObject?) {
         let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: counter.incrementAndGet())
-        self.socket.write(string : emitObject.toJSONString()!)
+        self.socket.write(string : emitObject.toJSONString() ?? "")
     }
 
     public func subscribe(channel: String, data: HandyJSON) {
         let subscribeObject = EmitEvent(event: "#subscribe", data: Channel(channel: channel, data: data as AnyObject), cid: counter.incrementAndGet())
-        self.socket.write(string : subscribeObject.toJSONString()!)
+        self.socket.write(string : subscribeObject.toJSONString() ?? "")
     }
     
     public func emit (eventName : String, data : AnyObject?) {
