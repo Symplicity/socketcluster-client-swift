@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ScClient"
-  s.version      = "2.0.1"
+  s.version      = "2.1.2"
   s.summary      = "A socketcluster client for iOS and OSX."
-  s.swift_version = '4.0'
+  s.swift_version = '5.3'
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -84,7 +84,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/sacOO7/socketcluster-client-swift.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/Symplicity/socketcluster-client-swift.git", :tag => s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -137,5 +137,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "Starscream", "~> 3.1.1"
-  s.dependency "HandyJSON", "~> 5.0.1"
+  s.dependency "HandyJSON", "~> 5.0.2"
 end
