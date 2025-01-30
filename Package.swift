@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/daltoniam/Starscream.git", .exact("3.1.1")),
-        .package(url: "https://github.com/alibaba/HandyJSON.git", .exact("5.0.2")),
+        .package(url: "https://github.com/symplicity/HandyJSON.git", .exact("5.0.6")),
         .package(url: "https://github.com/Quick/Quick.git", .exact("2.2.1")),
         .package(url: "https://github.com/Quick/Nimble.git", .exact("8.0.9")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0")
