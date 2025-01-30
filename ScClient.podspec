@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ScClient"
-  s.version      = "2.1.3"
+  s.version      = "2.1.4"
   s.summary      = "A socketcluster client for iOS and OSX."
   s.swift_version = '5.3'
 
@@ -137,5 +137,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "Starscream", "~> 3.1.1"
-  s.dependency "HandyJSON", "~> 5.0.2"
+  s.dependency "HandyJSON", "~> 5.0.6"
 end
